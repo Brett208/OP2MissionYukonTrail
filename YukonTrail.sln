@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OP2Helper", "OP2MissionSDK\OP2Helper\OP2Helper.vcxproj", "{0B520C87-4CFD-4A4D-ABD4-F87D26DF9AAD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Outpost2DLL", "OP2MissionSDK\Outpost2DLL\Outpost2DLL.vcxproj", "{B3F40368-F3CC-4EC5-A758-F5DAD08FEDDC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "YukonTrail", "YukonTrail.vcxproj", "{CB7579F0-281E-4E06-BBC9-76F35D61A1D7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HFL", "OP2MissionSDK\HFL\Source\HFL.vcxproj", "{0FC43A25-FB89-4258-849B-CB3C0A061E0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		ReleaseMinSize|Win32 = ReleaseMinSize|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B520C87-4CFD-4A4D-ABD4-F87D26DF9AAD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0B520C87-4CFD-4A4D-ABD4-F87D26DF9AAD}.Debug|Win32.Build.0 = Debug|Win32
+		{0B520C87-4CFD-4A4D-ABD4-F87D26DF9AAD}.Release|Win32.ActiveCfg = Release|Win32
+		{0B520C87-4CFD-4A4D-ABD4-F87D26DF9AAD}.Release|Win32.Build.0 = Release|Win32
+		{0B520C87-4CFD-4A4D-ABD4-F87D26DF9AAD}.ReleaseMinSize|Win32.ActiveCfg = ReleaseMinSize|Win32
+		{0B520C87-4CFD-4A4D-ABD4-F87D26DF9AAD}.ReleaseMinSize|Win32.Build.0 = ReleaseMinSize|Win32
+		{B3F40368-F3CC-4EC5-A758-F5DAD08FEDDC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B3F40368-F3CC-4EC5-A758-F5DAD08FEDDC}.Debug|Win32.Build.0 = Debug|Win32
+		{B3F40368-F3CC-4EC5-A758-F5DAD08FEDDC}.Release|Win32.ActiveCfg = Release|Win32
+		{B3F40368-F3CC-4EC5-A758-F5DAD08FEDDC}.Release|Win32.Build.0 = Release|Win32
+		{B3F40368-F3CC-4EC5-A758-F5DAD08FEDDC}.ReleaseMinSize|Win32.ActiveCfg = Release|Win32
+		{B3F40368-F3CC-4EC5-A758-F5DAD08FEDDC}.ReleaseMinSize|Win32.Build.0 = Release|Win32
+		{CB7579F0-281E-4E06-BBC9-76F35D61A1D7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CB7579F0-281E-4E06-BBC9-76F35D61A1D7}.Debug|Win32.Build.0 = Debug|Win32
+		{CB7579F0-281E-4E06-BBC9-76F35D61A1D7}.Release|Win32.ActiveCfg = Release|Win32
+		{CB7579F0-281E-4E06-BBC9-76F35D61A1D7}.Release|Win32.Build.0 = Release|Win32
+		{CB7579F0-281E-4E06-BBC9-76F35D61A1D7}.ReleaseMinSize|Win32.ActiveCfg = Release|Win32
+		{CB7579F0-281E-4E06-BBC9-76F35D61A1D7}.ReleaseMinSize|Win32.Build.0 = Release|Win32
+		{0FC43A25-FB89-4258-849B-CB3C0A061E0D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0FC43A25-FB89-4258-849B-CB3C0A061E0D}.Debug|Win32.Build.0 = Debug|Win32
+		{0FC43A25-FB89-4258-849B-CB3C0A061E0D}.Release|Win32.ActiveCfg = Release|Win32
+		{0FC43A25-FB89-4258-849B-CB3C0A061E0D}.Release|Win32.Build.0 = Release|Win32
+		{0FC43A25-FB89-4258-849B-CB3C0A061E0D}.ReleaseMinSize|Win32.ActiveCfg = ReleaseMinSize|Win32
+		{0FC43A25-FB89-4258-849B-CB3C0A061E0D}.ReleaseMinSize|Win32.Build.0 = ReleaseMinSize|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BB5803E-2140-48CD-A900-8B3C889A5389}
+	EndGlobalSection
+EndGlobal
