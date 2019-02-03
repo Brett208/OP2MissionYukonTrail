@@ -165,6 +165,10 @@ LOCATION FightGroupMaker::GetPatrolLoc(UnitDirection rotation)
 void FightGroupMaker::CreateAttack() 
 {
 	aiTechManager.RaiseTech();
+	if (attackGroupSize > 14) {
+		aiTechManager.RaiseTech();
+	}
+
 	std::vector<StartLoc> attackLocs(startLocs.size());
 	std::copy(startLocs.begin(), startLocs.end(), attackLocs.begin());
 		
@@ -184,9 +188,14 @@ void FightGroupMaker::CreateAttack()
 
 		chassisID = GetChassisID(aiTechManager.GetChassisType());
 	}
-
-	FightGroupMaker::attackGroupSize += 2;
-
+	
+	
+	if (attackGroupSize > 14) {
+		FightGroupMaker::attackGroupSize += 4;
+	}
+	else {
+		FightGroupMaker::attackGroupSize += 2;
+	}
 }
 
 void FightGroupMaker::CreateAttackGroup(const StartLoc& startLoc, map_id chassisID)
