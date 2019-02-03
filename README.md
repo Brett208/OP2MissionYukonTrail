@@ -1,2 +1,3 @@
 # OP2MissionYukonTrail
-A multiplayer scenario for Outpost 2
+
+A cooperative 4 player Resource Race multiplayer scenario for Outpost 2. Requires a copy of the original game to play.
