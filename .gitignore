@@ -1,0 +1,7 @@
+Debug
+Release
+*.suo
+*.user
+*.aps
+.vs
+Outpost2
