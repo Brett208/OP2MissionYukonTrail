@@ -191,6 +191,7 @@ Export int InitProc()
 	PlayerNum aiIndex = GetAIIndex();
 	Player[aiIndex].GoAI();
 	Player[aiIndex].SetColorNumber(GetAIColor());
+	Player[aiIndex].GoPlymouth();
 
 	fightGroupMaker = std::make_unique<FightGroupMaker>(GetAIIndex(), holdingRect);
 	ccBuilt.resize(HumanPlayerCount(), false);
@@ -246,8 +247,9 @@ Export int InitProc()
 	CreateBeacon(MAP_RECT(101 + X_, 84 + Y_, 110 + X_, 90 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
 	CreateBeacon(MAP_RECT(129 + X_, 204 + Y_, 148 + X_, 212 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
 	CreateBeacon(MAP_RECT(241 + X_, 3 + Y_, 252 + X_, 9 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
+	CreateBeacon(MAP_RECT(241 + X_, 3 + Y_, 252 + X_, 9 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
 
-	CreateBeacon(MAP_RECT(232 + X_, 90 + Y_, 252 + X_, 100 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar1);
+	CreateBeacon(MAP_RECT(78 + X_, 184 + Y_, 252 + X_, 100 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar1);
 	CreateBeacon(MAP_RECT(199 + X_, 96 + Y_, 217 + X_, 106 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar1);
 	
 	TethysGame::CreateBeacon(map_id::mapFumarole, 229 + X_, 162 + Y_, -1, -1, -1);
@@ -256,6 +258,7 @@ Export int InitProc()
 	TethysGame::CreateBeacon(map_id::mapFumarole, 245 + X_, 6 + Y_, -1, -1, -1);
 	TethysGame::CreateBeacon(map_id::mapFumarole, 73 + X_, 18 + Y_, -1, -1, -1);
 	TethysGame::CreateBeacon(map_id::mapFumarole, 52 + X_, 239 + Y_, -1, -1, -1);
+	TethysGame::CreateBeacon(map_id::mapFumarole, 83 + X_, 193 + Y_, -1, -1, -1);
 
 	
 	TethysGame::CreateBeacon(map_id::mapMagmaVent, 167 + X_, 140 + Y_, -1, -1, -1);
@@ -267,7 +270,7 @@ Export int InitProc()
 
 	//CreateTimeTrigger(true, true, 15, 16, "CreateScoutPatrol");
 	CreateTimeTrigger(true, true, 16'000, 17'000, "CreateScoutPatrol");
-
+	
 	return true;
 }
 
