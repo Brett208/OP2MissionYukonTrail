@@ -18,7 +18,7 @@ const ResourceSet resourceSet {
 		// Kids, Adults, Scientist, Food, Common, Rare
 		{ 27, 18, 22, 4000, 0, 0 },		// Easy
 		{ 24, 15, 20, 3500, 0, 0 },		// Medium
-		{ 20, 12, 18, 3000, 0, 0 },		// Hard
+		{ 21, 13, 19, 3250, 0, 0 },		// Hard
 	}
 };
 

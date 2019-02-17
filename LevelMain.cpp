@@ -242,11 +242,11 @@ Export int InitProc()
 	CreateBeacon(MAP_RECT(215 + X_, 248 + Y_, 227 + X_, 254 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
 	CreateBeacon(MAP_RECT(212 + X_, 52 + Y_, 231 + X_, 65 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
 	CreateBeacon(MAP_RECT(33 + X_, 84 + Y_, 51 + X_, 90 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
+	CreateBeacon(MAP_RECT(75 + X_, 182 + Y_, 82 + X_, 184 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
 
 	CreateBeacon(MAP_RECT(199 + X_, 247 + Y_, 209 + X_, 251 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
 	CreateBeacon(MAP_RECT(101 + X_, 84 + Y_, 110 + X_, 90 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
 	CreateBeacon(MAP_RECT(129 + X_, 204 + Y_, 148 + X_, 212 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
-	CreateBeacon(MAP_RECT(241 + X_, 3 + Y_, 252 + X_, 9 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
 	CreateBeacon(MAP_RECT(241 + X_, 3 + Y_, 252 + X_, 9 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
 
 	CreateBeacon(MAP_RECT(78 + X_, 184 + Y_, 252 + X_, 100 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar1);
