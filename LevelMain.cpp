@@ -260,7 +260,6 @@ Export int InitProc()
 	TethysGame::CreateBeacon(map_id::mapFumarole, 52 + X_, 239 + Y_, -1, -1, -1);
 	TethysGame::CreateBeacon(map_id::mapFumarole, 83 + X_, 193 + Y_, -1, -1, -1);
 
-	
 	TethysGame::CreateBeacon(map_id::mapMagmaVent, 167 + X_, 140 + Y_, -1, -1, -1);
 	TethysGame::CreateBeacon(map_id::mapMagmaVent, 7 + X_, 10 + Y_, -1, -1, -1);
 	TethysGame::CreateBeacon(map_id::mapMagmaVent, 98 + X_, 153 + Y_, -1, -1, -1);
@@ -268,7 +267,6 @@ Export int InitProc()
 
 	CreateVictoryConditions();
 
-	//CreateTimeTrigger(true, true, 15, 16, "CreateScoutPatrol");
 	CreateTimeTrigger(true, true, 16'000, 17'000, "CreateScoutPatrol");
 	
 	return true;
@@ -436,7 +434,6 @@ Export void CreateScoutPatrol()
 		missileTrigger = CreateTimeTrigger(true, false, 4000, 7000, "LaunchEmpMissile");
 	}
 }
-
 
 Export void CreateAttack()
 {

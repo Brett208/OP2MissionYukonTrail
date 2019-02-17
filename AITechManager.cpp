@@ -24,7 +24,7 @@ const std::vector<AITechManager::TechOption> AITechManager::allTech
 	TechOption{techExtendedRangeProjectileLauncherEden, std::vector<TechID>{techGrenadeLoadingMechanismEden, techGrenadeLoadingMechanismPlymouth}, false, false},
 };
 
-AITechManager::AITechManager(PlayerNum aiPlayerIndex) : 
+AITechManager::AITechManager(PlayerNum aiPlayerIndex) :
 	aiPlayerIndex(aiPlayerIndex),
 	unusedTech(allTech),
 	turretLevel(TurretLevel::Initial),

@@ -366,7 +366,7 @@ void FightGroupMaker::LaunchEmpMissile()
 	}
 
 	Unit& target = buildings[TethysGame::GetRand(buildings.size())];
-	TethysGame::SetEMPMissile(0, 0, 0, target.Location().x, target.Location().y);
+	TethysGame::SetEMPMissile(0, 0, aiPlayerNum, target.Location().x, target.Location().y);
 }
 
 void FightGroupMaker::TestGuardingHoldingZone()
