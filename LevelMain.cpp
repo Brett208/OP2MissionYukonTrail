@@ -18,7 +18,6 @@ void CreateMarkers();
 
 // Required data exports  (Description, Map, TechTree, GameType, NumPlayers)
 ExportLevelDetails("4P, RR, 'Yukon Trail'", "YukonTrail.map", "survtech.txt", MultiResourceRace, 5);
-
 std::vector<bool> ccBuilt; // If each player has built their CC
 std::vector<bool> moraleFree; // If each player's morale is free
 bool allCCsBuilt;
@@ -38,7 +37,7 @@ struct SDescBlockEx {
 	int unk7;
 };
 
-SCRIPT_API SDescBlockEx DescBlockEx = { 1, 0, 0, 0, 0, 0, 0, 0 };
+Export SDescBlockEx DescBlockEx = { 1, 0, 0, 0, 0, 0, 0, 0 };
 
 struct ScriptGlobal
 {
@@ -233,14 +232,14 @@ Export int InitProc()
 
 	CreateBeacon(MAP_RECT(241 + X_, 236 + Y_, 251 + X_, 243 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
 	CreateBeacon(MAP_RECT(212 + X_, 52 + Y_, 231 + X_, 65 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
-	CreateBeacon(MAP_RECT(238 + X_, 70 + Y_, 252 + X_, 80 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
+	CreateBeacon(MAP_RECT(238 + X_, 70 + Y_, 252 + X_, 80 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar2);
 	CreateBeacon(MAP_RECT(194 + X_, 75 + Y_, 205 + X_, 82 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
 	CreateBeacon(MAP_RECT(145 + X_, 149 + Y_, 176 + X_, 175 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
 	CreateBeacon(MAP_RECT(100 + X_, 157 + Y_, 118 + X_, 167 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
 	CreateBeacon(MAP_RECT(133 + X_, 22 + Y_, 148 + X_, 37 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
 
 	CreateBeacon(MAP_RECT(215 + X_, 248 + Y_, 227 + X_, 254 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
-	CreateBeacon(MAP_RECT(212 + X_, 52 + Y_, 231 + X_, 65 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
+	CreateBeacon(MAP_RECT(212 + X_, 52 + Y_, 231 + X_, 65 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
 	CreateBeacon(MAP_RECT(33 + X_, 84 + Y_, 51 + X_, 90 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
 	CreateBeacon(MAP_RECT(75 + X_, 182 + Y_, 82 + X_, 184 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
 
