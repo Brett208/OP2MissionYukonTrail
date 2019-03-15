@@ -2,6 +2,7 @@
 
 #include "AITechManager.h"
 #include "Outpost2DLL/Outpost2DLL.h"
+#include <array>
 #include <vector>
 #include <cstddef>
 #include <map>
@@ -70,7 +71,7 @@ private:
 	void GetHumanBuildings(std::vector<Unit>& buildingsOut, map_id buildingType);
 	void GetHumanBuildings(std::vector<Unit>& buildingsOut, const std::vector<map_id>& buildingTypes);
 	void AttackGroupDebug();
-	void FightGroupMaker::TestGuardingHoldingZone();
+	void TestGuardingHoldingZone();
 };
 
 
