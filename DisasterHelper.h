@@ -2,11 +2,12 @@
 
 // Disaster Helper Version: 1.0
 
-#include "OP2Helper\OP2Helper.h"
-#include "Outpost2DLL\Outpost2DLL.h"
+#include "OP2Helper/OP2Helper.h"
+#include "Outpost2DLL/Outpost2DLL.h"
 #include <climits>
 #include <cmath>
 #include <vector>
+#include <array> 
 
 // DisasterHelper simplifies adding random disasters to a map. The default
 // settings should be ideal for a basic Last One Standing Map. Many features are 
@@ -190,8 +191,8 @@ private:
 
 	LOCATION GetRandMapLoc();
 	double DistanceBetweenPoints(LOCATION loc1, LOCATION loc2);	
-	bool DisasterHelper::IsLocInSafeArea(LOCATION& loc);
-	LOCATION DisasterHelper::FindVortexEndLoc(const MAP_RECT& vortexCorridor,
+	bool IsLocInSafeArea(LOCATION& loc);
+	LOCATION FindVortexEndLoc(const MAP_RECT& vortexCorridor,
 		const LOCATION& startLoc, double minPercentHypotenuseTravel);
 
 	void SendDebugMessage(char* message);

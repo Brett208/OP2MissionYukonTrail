@@ -1,6 +1,6 @@
 #include "FightGroupMaker.h"
 #include "OP2Helper/OP2Helper.h"
-#include "HFL\Source\HFL.h"
+#include "HFL/Source/HFL.h"
 #include <array>
 #include <algorithm>
 #include <stdexcept>
@@ -310,9 +310,11 @@ void FightGroupMaker::AttackBuilding(FightGroup& fightGroup, const std::vector<m
 
 	Unit building = buildings[TethysGame::GetRand(buildings.size())];
 
-	fightGroup.SetRect(MAP_RECT(
+	MAP_RECT mapRect(
 		building.Location().x - 5, building.Location().y - 5,
-		building.Location().x + 5, building.Location().y + 5));
+		building.Location().x + 5, building.Location().y + 5
+	);
+	fightGroup.SetRect(mapRect);
 
 	fightGroupsWithTarget.push_back(FightGroupTarget { fightGroup, building } );
 }
@@ -412,7 +414,8 @@ void FightGroupMaker::AttackGroupDebug()
 		fightGroupHoldingZone.TakeUnit(unit);
 	}
 
-	fightGroupHoldingZone.SetRect(MAP_RECT (162 + X_, 1 + Y_, 190 + X_, 7 + Y_));
+	MAP_RECT mapRect(162 + X_, 1 + Y_, 190 + X_, 7 + Y_);
+	fightGroupHoldingZone.SetRect(mapRect);
 	
 	for (int i = 0; i < 3; i++)
 	{
