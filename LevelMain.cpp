@@ -27,17 +27,11 @@ const MAP_RECT holdingRect(162 + X_, 1 + Y_, 220 + X_, 17 + Y_);
 
 // Allows an enemy AI in a multiplayer scenario.
 struct SDescBlockEx {
-	int unk0;
-	int unk1;
-	int unk2;
-	int unk3;
-	int unk4;
-	int unk5;
-	int unk6;
-	int unk7;
+	int aiPlayerCount;
+	int unused[7];
 };
 
-Export SDescBlockEx DescBlockEx = { 1, 0, 0, 0, 0, 0, 0, 0 };
+Export SDescBlockEx DescBlockEx = { 1 };
 
 struct ScriptGlobal
 {
