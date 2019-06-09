@@ -280,8 +280,5 @@ void DisasterHelper::CreateMeteor()
 
 void DisasterHelper::SendDebugMessage(char* message)
 {
-#if _DEBUG
-	Unit unit;
-	TethysGame::AddMessage(unit, message, PlayerNum::Player0, SoundID::sndBeep8);
-#endif
+	AddGameMessage(message, SoundID::sndBeep8);
 }

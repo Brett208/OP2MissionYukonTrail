@@ -253,12 +253,14 @@ Export int InitProc()
 
 	CreateTimeTrigger(true, true, 16'000, 17'000, "CreateScoutPatrol");
 	
+	TethysGame::AddMessage(-1, -1, "test", -1, SoundID::sndMessage2);
+	//AddMessage("Morale is waivering, Good Luck Commander!", SoundID::sndMessage2, -1, NullUnit);
+
 	return true;
 }
 
 void CreateMarkers()
 {
-	
 	int midX, midY;
 	midX = (holdingRect.x2 - holdingRect.x1) / 2;
 	midY = (holdingRect.y2 - holdingRect.y1) / 2;
@@ -276,10 +278,9 @@ void CreateMarkers()
 
 void FreeMorale(int playerIndex) 
 {
-	Unit unit;
 	moraleFree[playerIndex] = true;
 	TethysGame::FreeMoraleLevel(playerIndex);
-	TethysGame::AddMessage(unit, "Morale is waivering, Good Luck Commander!", playerIndex, SoundID::sndMessage2);
+	AddGameMessage("Morale is waivering, Good Luck Commander!", SoundID::sndMessage2, playerIndex);
 }
 
 void CheckMorale()
