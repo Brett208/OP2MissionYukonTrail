@@ -73,7 +73,3 @@ private:
 	void AttackGroupDebug();
 	void TestGuardingHoldingZone();
 };
-
-
-
-

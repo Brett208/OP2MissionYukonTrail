@@ -40,7 +40,6 @@ void InitializePlayers(int humanPlayerCount, PlayerNum aiPlayerIndex)
 		const int locationIndex = TethysGame::GetRand(initStartLocs.size());
 		InitializePlayer(static_cast<PlayerNum>(i), initStartLocs[locationIndex]);
 		initStartLocs.erase(initStartLocs.begin() + locationIndex);
-		
 	}
 }
 

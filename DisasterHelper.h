@@ -7,7 +7,7 @@
 #include <climits>
 #include <cmath>
 #include <vector>
-#include <array> 
+#include <array>
 
 // DisasterHelper simplifies adding random disasters to a map. The default
 // settings should be ideal for a basic Last One Standing Map. Many features are 

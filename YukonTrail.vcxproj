@@ -62,7 +62,7 @@
       <Command>if defined Outpost2Path (xcopy /y /d "$(TargetPath)" "$(Outpost2Path)\") else (echo Outpost2Path environment variable not defined. Skipping Post Build Copy.)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>Copying DLL to game folder</Message>
+      <Message>Copy DLL to game folder</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -86,7 +86,7 @@
       <Command>if defined Outpost2Path (xcopy /y /d "$(TargetPath)" "$(Outpost2Path)\") else (echo Outpost2Path environment variable not defined. Skipping Post Build Copy.)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>Copying DLL to game folder</Message>
+      <Message>Copy DLL to game folder</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
