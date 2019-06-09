@@ -16,22 +16,14 @@
 Export void CreateDisaster();
 void CreateMarkers();
 
-// Required data exports  (Description, Map, TechTree, GameType, NumPlayers)
-ExportLevelDetails("4P, RR, 'Yukon Trail'", "YukonTrail.map", "survtech.txt", MultiResourceRace, 5);
+ExportLevelDetailsFullEx("4P, RR, 'Yukon Trail'", "YukonTrail.map", "survtech.txt", MultiResourceRace, 5, 12, false, 1);
+
 std::vector<bool> ccBuilt; // If each player has built their CC
 std::vector<bool> moraleFree; // If each player's morale is free
 bool allCCsBuilt;
 const int disastersAndMoraleTimer = 20'000;
 
 const MAP_RECT holdingRect(162 + X_, 1 + Y_, 220 + X_, 17 + Y_);
-
-// Allows an enemy AI in a multiplayer scenario.
-struct SDescBlockEx {
-	int aiPlayerCount;
-	int unused[7];
-};
-
-Export SDescBlockEx DescBlockEx = { 1 };
 
 struct ScriptGlobal
 {
