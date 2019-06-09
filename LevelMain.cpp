@@ -170,7 +170,6 @@ void CreateBeacon(const LOCATION& loc, BeaconTypes beaconType, Yield yield)
 
 Export int InitProc()
 {
-	HFLInit();
 	CreateMarkers();
 
 	PlayerNum aiIndex = GetAIIndex();
