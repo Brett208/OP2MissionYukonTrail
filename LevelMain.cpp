@@ -252,9 +252,6 @@ Export int InitProc()
 	CreateVictoryConditions();
 
 	CreateTimeTrigger(true, true, 16'000, 17'000, "CreateScoutPatrol");
-	
-	TethysGame::AddMessage(-1, -1, "test", -1, SoundID::sndMessage2);
-	//AddMessage("Morale is waivering, Good Luck Commander!", SoundID::sndMessage2, -1, NullUnit);
 
 	return true;
 }
