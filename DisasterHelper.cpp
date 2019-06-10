@@ -278,7 +278,7 @@ void DisasterHelper::CreateMeteor()
 	TethysGame::SetMeteor(disasterLoc.x, disasterLoc.y, meteorSize);
 }
 
-void DisasterHelper::SendDebugMessage(char* message)
+void DisasterHelper::SendDebugMessage(const char* message)
 {
 	AddGameMessage(message, SoundID::sndBeep8);
 }

@@ -195,5 +195,5 @@ private:
 	LOCATION FindVortexEndLoc(const MAP_RECT& vortexCorridor,
 		const LOCATION& startLoc, double minPercentHypotenuseTravel);
 
-	void SendDebugMessage(char* message);
+	void SendDebugMessage(const char* message);
 };
