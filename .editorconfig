@@ -1,0 +1,4 @@
+root = true
+
+[*]
+spelling_exclusion_path = exclusion.dic

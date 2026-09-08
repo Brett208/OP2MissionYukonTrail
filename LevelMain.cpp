@@ -16,7 +16,7 @@
 Export void CreateDisaster();
 void CreateMarkers();
 
-ExportLevelDetailsFullEx("4P, RR, 'Yukon Trail'", "YukonTrail.map", "survtech.txt", MultiResourceRace, 5, 12, false, 1);
+ExportLevelDetailsFullEx("5P, RR, 'Yukon Trail'", "YukonTrail.map", "survtech.txt", MultiResourceRace, 6, 12, false, 1);
 
 std::vector<bool> ccBuilt; // If each player has built their CC
 std::vector<bool> moraleFree; // If each player's morale is free
