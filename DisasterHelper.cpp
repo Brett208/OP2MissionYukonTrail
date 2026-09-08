@@ -226,7 +226,7 @@ void DisasterHelper::CreateVortex()
 		vortexStartLoc.y,
 		minVortexDuration + TethysGame::GetRand(maxVortexDuration - minVortexDuration),
 		vortexEndLoc.x,
-		vortexEndLoc.x,
+		vortexEndLoc.y,
 		false);
 }
 
