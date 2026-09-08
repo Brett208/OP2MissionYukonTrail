@@ -11,7 +11,7 @@ const std::vector<AITechManager::TechOption> AITechManager::allTech
 
 	TechOption{techAdvancedCombatChassis, std::vector<TechID>{techAdvancedArmoringSystems}, false, false},
 	//TechOption{techAdvancedCombatChassis, std::vector<TechID>{techReinforcedPantherConstruction}},
-	//TechOption{techAdvancedCombatChassis, std::vector<TechID>{techPatherDriveTrainRefit}},
+	//TechOption{techAdvancedCombatChassis, std::vector<TechID>{techPantherDriveTrainRefit}},
 	TechOption{techAdvancedCombatChassis, std::vector<TechID>{techElectromagneticPulsing, techDirectionalMagneticFields, techRocketPropulsion}, true, false},
 	
 	TechOption{techElectromagneticPulsing, std::vector<TechID>{techRocketAtmosphericReEntrySystem}, false, false},

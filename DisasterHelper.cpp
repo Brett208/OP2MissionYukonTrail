@@ -238,7 +238,7 @@ void DisasterHelper::CreateStorm()
 		return;
 	}
 
-	//NOTE: Electrical storms will conintue beyond their end point if duration permits.
+	//NOTE: Electrical storms will continue beyond their end point if duration permits.
 	LOCATION startLoc = GetRandMapLoc();
 	LOCATION endLoc = GetRandMapLoc();
 

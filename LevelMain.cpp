@@ -81,7 +81,7 @@ PlayerColor GetAIColor(bool allowBlack = false)
 // String content must be preserved for proper viewing of victory conditions
 std::string commonMetalObjective;
 std::string rareMetalObjective;
-std::string noEnemiesObjective("No enemy units in rendevous area");
+std::string noEnemiesObjective("No enemy units in rendezvous area");
 
 // AI player is last player
 PlayerNum GetAIIndex()
@@ -111,13 +111,13 @@ bool EnemyUnitInRendevousArea()
 	return false;
 }
 
-//Trigger noEnemiesInRendevousTrigger;
-//Trigger enemiesInRendevousVictoryTrigger;
+//Trigger noEnemiesInRendezvousTrigger;
+//Trigger enemiesInRendezvousVictoryTrigger;
 
-//void CreateEnemiesInRendevousVictoryCondition()
+//void CreateEnemiesInRendezvousVictoryCondition()
 //{
-//	noEnemiesInRendevousTrigger = CreateTimeTrigger(true, false, 5, "NoResponseToTrigger");
-//	enemiesInRendevousVictoryTrigger = CreateVictoryCondition(true, false, noEnemiesInRendevousTrigger, noEnemiesObjective.c_str());
+//	noEnemiesInRendezvousTrigger = CreateTimeTrigger(true, false, 5, "NoResponseToTrigger");
+//	enemiesInRendezvousVictoryTrigger = CreateVictoryCondition(true, false, noEnemiesInRendezvousTrigger, noEnemiesObjective.c_str());
 //}
 
 void CreateVictoryConditions()
@@ -142,7 +142,7 @@ void CreateVictoryConditions()
 	Trigger triggerRare = CreateEscapeTrigger(true, false, PlayerAll, holdingRect.x1, holdingRect.y1, holdingRect.Width(),holdingRect.Height(), rareMetalToWin / 1000, map_id::mapCargoTruck, Truck_Cargo::truckRareMetal, rareMetalToWin, "NoResponseToTrigger");
 	CreateVictoryCondition(true, false, triggerRare, rareMetalObjective.c_str());
 
-	//CreateEnemiesInRendevousVictoryCondition();
+	//CreateEnemiesInRendezvousVictoryCondition();
 }
 
 std::unique_ptr<FightGroupMaker> fightGroupMaker;
@@ -341,19 +341,19 @@ void CheckccBuilt()
 
 }
 
-//void CheckEnemiesInRendevousArea()
+//void CheckEnemiesInRendezvousArea()
 //{
-//	if (EnemyUnitInRendevousArea()) {
-//		if (noEnemiesInRendevousTrigger.HasFired(Player0)) {
-//			noEnemiesInRendevousTrigger.Destroy();
-//			enemiesInRendevousVictoryTrigger.Destroy();
+//	if (EnemyUnitInRendezvousArea()) {
+//		if (noEnemiesInRendezvousTrigger.HasFired(Player0)) {
+//			noEnemiesInRendezvousTrigger.Destroy();
+//			enemiesInRendezvousVictoryTrigger.Destroy();
 //
-//			CreateEnemiesInRendevousVictoryCondition();
+//			CreateEnemiesInRendezvousVictoryCondition();
 //		}
 //	}
 //	else {
-//		if (!noEnemiesInRendevousTrigger.IsEnabled()) {
-//			noEnemiesInRendevousTrigger.Enable();
+//		if (!noEnemiesInRendezvousTrigger.IsEnabled()) {
+//			noEnemiesInRendezvousTrigger.Enable();
 //		}
 //	}
 //}
@@ -376,7 +376,7 @@ void CheckReadyForDisasters()
 
 Export void AIProc() 
 {
-	//CheckEnemiesInRendevousArea();
+	//CheckEnemiesInRendezvousArea();
 	CheckccBuilt();
 	CheckMorale();
 	fightGroupMaker->UpdateFightGroups();
