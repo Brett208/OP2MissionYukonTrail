@@ -277,7 +277,7 @@ void FreeMorale(int playerIndex)
 {
 	moraleFree[playerIndex] = true;
 	TethysGame::FreeMoraleLevel(playerIndex);
-	AddGameMessage("Morale is waivering, Good Luck Commander!", SoundID::sndMessage2, playerIndex);
+	AddGameMessage("Morale is wavering, Good Luck Commander!", SoundID::sndMessage2, playerIndex);
 }
 
 void CheckMorale()
