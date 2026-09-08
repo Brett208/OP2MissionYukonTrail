@@ -150,7 +150,7 @@ public:
 	// If unable to find a valid LOCATION, reports a warning in debug mode and returns (0,0).
 	LOCATION GetRandLocOutsideSafeAreas();
 
-	bool MapPropertiesSet()
+	bool AreMapPropertiesSet() const
 	{
 		return mapWidth != 0;
 	}

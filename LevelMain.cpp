@@ -81,7 +81,6 @@ PlayerColor GetAIColor(bool allowBlack = false)
 // String content must be preserved for proper viewing of victory conditions
 std::string commonMetalObjective;
 std::string rareMetalObjective;
-std::string noEnemiesObjective("No enemy units in rendezvous area");
 
 // AI player is last player
 PlayerNum GetAIIndex()
@@ -95,30 +94,6 @@ PlayerNum GetAIIndex()
 
 	throw std::runtime_error("No AI player detected");
 }
-
-bool EnemyUnitInRendevousArea()
-{
-	Unit unit;
-	InRectEnumerator rectEnumerator(holdingRect);
-
-	while (rectEnumerator.GetNext(unit))
-	{
-		if (unit.OwnerID() == GetAIIndex()) {
-			return true;
-		}
-	}
-
-	return false;
-}
-
-//Trigger noEnemiesInRendezvousTrigger;
-//Trigger enemiesInRendezvousVictoryTrigger;
-
-//void CreateEnemiesInRendezvousVictoryCondition()
-//{
-//	noEnemiesInRendezvousTrigger = CreateTimeTrigger(true, false, 5, "NoResponseToTrigger");
-//	enemiesInRendezvousVictoryTrigger = CreateVictoryCondition(true, false, noEnemiesInRendezvousTrigger, noEnemiesObjective.c_str());
-//}
 
 void CreateVictoryConditions()
 {
@@ -141,8 +116,6 @@ void CreateVictoryConditions()
 
 	Trigger triggerRare = CreateEscapeTrigger(true, false, PlayerAll, holdingRect.x1, holdingRect.y1, holdingRect.Width(),holdingRect.Height(), rareMetalToWin / 1000, map_id::mapCargoTruck, Truck_Cargo::truckRareMetal, rareMetalToWin, "NoResponseToTrigger");
 	CreateVictoryCondition(true, false, triggerRare, rareMetalObjective.c_str());
-
-	//CreateEnemiesInRendezvousVictoryCondition();
 }
 
 std::unique_ptr<FightGroupMaker> fightGroupMaker;
@@ -341,23 +314,6 @@ void CheckccBuilt()
 
 }
 
-//void CheckEnemiesInRendezvousArea()
-//{
-//	if (EnemyUnitInRendezvousArea()) {
-//		if (noEnemiesInRendezvousTrigger.HasFired(Player0)) {
-//			noEnemiesInRendezvousTrigger.Destroy();
-//			enemiesInRendezvousVictoryTrigger.Destroy();
-//
-//			CreateEnemiesInRendezvousVictoryCondition();
-//		}
-//	}
-//	else {
-//		if (!noEnemiesInRendezvousTrigger.IsEnabled()) {
-//			noEnemiesInRendezvousTrigger.Enable();
-//		}
-//	}
-//}
-
 void CheckReadyForDisasters()
 {
 	for (auto isBuilt : ccBuilt) {
@@ -376,7 +332,6 @@ void CheckReadyForDisasters()
 
 Export void AIProc() 
 {
-	//CheckEnemiesInRendezvousArea();
 	CheckccBuilt();
 	CheckMorale();
 	fightGroupMaker->UpdateFightGroups();
@@ -391,7 +346,7 @@ Export void NoResponseToTrigger() {}	//Optional function export, supposed to be 
 
 Export void CreateDisaster()
 {
-	if (!disasterHelper.MapPropertiesSet())
+	if (!disasterHelper.AreMapPropertiesSet())
 	{
 		disasterHelper.SetMapProperties(256, 256, false); //MapWidth, MapHeight, Does map wrap East/West
 	}

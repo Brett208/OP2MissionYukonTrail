@@ -138,8 +138,7 @@ void FightGroupMaker::CreatePatrolGroup()
 	patrolPoints[2] = startLoc.loc;
 	patrolPoints[3] = LOCATION(-1, -1);
 
-	PatrolRoute patrolRoute;
-	patrolRoute.waypoints = patrolPoints;
+	PatrolRoute patrolRoute{ 0, patrolPoints };
 	patrolGroup.DoPatrolOnly();
 	patrolGroup.SetPatrolMode(patrolRoute);
 }
@@ -347,8 +346,7 @@ void FightGroupMaker::AttackHoldingZone(FightGroup& fightGroup)
 	patrolPoints[1] = holdingRect.RandPt();
 	patrolPoints[2] = LOCATION(-1, -1);
 
-	PatrolRoute patrolRoute;
-	patrolRoute.waypoints = patrolPoints;
+	PatrolRoute patrolRoute{ 0, patrolPoints };
 	fightGroup.SetPatrolMode(patrolRoute);
 
 	fightGroupsHoldingRect.push_back(fightGroup);

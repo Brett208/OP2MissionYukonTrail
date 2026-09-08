@@ -31,7 +31,7 @@ private:
 
 	struct StartLoc {
 		LOCATION loc;
-		UnitDirection rotation;
+		UnitDirection rotation = UnitDirection::South;
 	};
 
 	struct FightGroupTarget
