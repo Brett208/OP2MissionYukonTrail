@@ -162,8 +162,8 @@ private:
 	int xOffset = 31;
 	int yOffset = -1;
 
-	int mapWidth;
-	int mapHeight;
+	int mapWidth = 0;
+	int mapHeight = 0;
 
 	int noDisasterPercent = 15;
 	int meteorPercent = 40;
