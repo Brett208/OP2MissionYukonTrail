@@ -11,13 +11,13 @@
 
 // DisasterHelper simplifies adding random disasters to a map. The default
 // settings should be ideal for a basic Last One Standing Map. Many features are 
-// customizable such as ratio of occuring disasters, disaster duration, and disaster strength.
+// customizable such as ratio of occurring disasters, disaster duration, and disaster strength.
 // USAGE: Pass the function CreateRandomDisaster to an Outpost 2 time trigger. You will have
 //        to wrap CreateRandomDisaster in an Export function since you cannot use the 
 //        TYPEDEF Export on functions within C++ classes. Set the time interval on the 
 //        trigger for the frequency you want disasters to appear. When a disaster is called
 //        for, it will not occur until about 10-15 marks later to allow time for disaster
-//        warnings/watches in game if they are researched by the player. Inidiviual functions
+//        warnings/watches in game if they are researched by the player. Individual functions
 //        exist to call for Vortex, Meteor, Storm, or Earthquake using the DisasterHelper's
 //        settings if desired over a random disaster.
 // MAP LOCATIONS: Ensure all map coordinates passed into DisasterHelper are pre-corrected 
@@ -25,7 +25,7 @@
 // WARNINGS: DisasterHelper can produce warning messages by using the Outpost 2 built in
 //           multiplayer chat pane. For these warnings to appear, the code must be compiled
 //           in debug mode. For final production code, you should compile in Release mode
-//           which will keep the warnings from occuring.
+//           which will keep the warnings from occurring.
 class DisasterHelper
 {
 public:
@@ -150,7 +150,7 @@ public:
 	// If unable to find a valid LOCATION, reports a warning in debug mode and returns (0,0).
 	LOCATION GetRandLocOutsideSafeAreas();
 
-	bool MapPropertiesSet()
+	bool AreMapPropertiesSet() const
 	{
 		return mapWidth != 0;
 	}
@@ -162,8 +162,8 @@ private:
 	int xOffset = 31;
 	int yOffset = -1;
 
-	int mapWidth;
-	int mapHeight;
+	int mapWidth = 0;
+	int mapHeight = 0;
 
 	int noDisasterPercent = 15;
 	int meteorPercent = 40;

@@ -31,7 +31,7 @@ private:
 
 	struct StartLoc {
 		LOCATION loc;
-		UnitDirection rotation;
+		UnitDirection rotation = UnitDirection::South;
 	};
 
 	struct FightGroupTarget
@@ -53,6 +53,7 @@ private:
 	std::vector<FightGroup> fightGroupsHoldingRect;
 	MAP_RECT holdingRect;
 
+	// Relies on assumption that there is only 1 AI player.
 	inline std::size_t HumanPlayerCount() const
 	{
 		return aiPlayerNum;

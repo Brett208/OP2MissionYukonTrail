@@ -42,5 +42,5 @@ private:
 	TurretLevel turretLevel;
 	ChassisType chassisType;
 
-	std::vector<TechOption> GetAvailableTech();
+	std::vector<std::size_t> GetAvailableTechIndices();
 };

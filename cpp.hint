@@ -1,0 +1,23 @@
+// Visual Studio IntelliSense hint file
+// See: https://learn.microsoft.com/en-us/cpp/build/reference/hint-files
+//
+// A hint file only applies to source files whose ancestor-directory chain
+// (from their project root down to their own folder) passes through the directory
+// containing the hint. This drives the hint file to live in the actual level project
+// instead of in the library project where the macro is defined.
+//
+// The common macros defined in Outpost 2 library code are disruptive Macros that
+// encapsulate keywords adorning functions. For these types of macros, only the 
+// macro name is required in the hint file.
+//
+// These hints prevent VCR102 from registering and assist Visual Studio intellisense
+// in navigating the macros.
+
+
+#define Export
+#define OP2
+
+#define ExportLevelDetails(levelDesc, mapName, techTreeName, missionType, numPlayers)
+#define ExportLevelDetailsFull(levelDesc, mapName, techTreeName, missionType, numPlayers, maxTechLevel, bUnitOnlyMission)
+#define ExportLevelDetailsEx(levelDesc, mapName, techTreeName, missionType, numPlayers, maxTechLevel, bUnitOnlyMission)
+#define ExportLevelDetailsFullEx(levelDesc, mapName, techTreeName, missionType, numPlayers, maxTechLevel, bUnitOnlyMission, numAiPlayers)

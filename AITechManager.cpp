@@ -3,20 +3,17 @@
 const std::vector<AITechManager::TechOption> AITechManager::allTech
 {
 	TechOption{techMobileWeaponsPlatform, std::vector<TechID>{techLargeScaleOpticalResonators, techMicrowaveTurret, techDissipatingAdhesives}, false, false},
-	
+
 	TechOption{techLargeScaleOpticalResonators, std::vector<TechID>{techIndependentTurretPowerSystems}, false, false},
 	TechOption{techLargeScaleOpticalResonators, std::vector<TechID>{techScoutClassDriveTrainRefit, techHeatDissipationSystemsPlymouth}, false, false},
 
 	TechOption{techIndependentTurretPowerSystems, std::vector<TechID>{techAdvancedCombatChassis}, false, true},
 
 	TechOption{techAdvancedCombatChassis, std::vector<TechID>{techAdvancedArmoringSystems}, false, false},
-	//TechOption{techAdvancedCombatChassis, std::vector<TechID>{techReinforcedPantherConstruction}},
-	//TechOption{techAdvancedCombatChassis, std::vector<TechID>{techPatherDriveTrainRefit}},
 	TechOption{techAdvancedCombatChassis, std::vector<TechID>{techElectromagneticPulsing, techDirectionalMagneticFields, techRocketPropulsion}, true, false},
-	
+
 	TechOption{techElectromagneticPulsing, std::vector<TechID>{techRocketAtmosphericReEntrySystem}, false, false},
 	TechOption{techElectromagneticPulsing, std::vector<TechID>{techDualTurretWeaponsSystems}, false, true},
-	TechOption{techDualTurretWeaponsSystems, std::vector<TechID>{techTigerSpeedModification}, false, false},
 
 	TechOption{techDirectionalMagneticFields, std::vector<TechID>{techIncreasedCapacitanceCircuitry, techHighPoweredExplosives}, false, false},
 
@@ -37,14 +34,15 @@ AITechManager::AITechManager(PlayerNum aiPlayerIndex) :
 
 void AITechManager::RaiseTech()
 {
-	const std::vector<TechOption> availableTech = GetAvailableTech();
+	const std::vector<std::size_t> availableTechIndices = GetAvailableTechIndices();
 
-	if (availableTech.empty()) {
+	if (availableTechIndices.empty()) {
 		return;
 	}
 
-	const int techIndex = TethysGame::GetRand(availableTech.size());
-	const TechOption techOption = availableTech[techIndex];
+	const std::size_t choiceIndex = TethysGame::GetRand(availableTechIndices.size());
+	const std::size_t techIndex = availableTechIndices[choiceIndex];
+	const TechOption techOption = unusedTech[techIndex];
 	unusedTech.erase(unusedTech.begin() + techIndex);
 
 	if (techOption.raiseTurretLevel) {
@@ -61,18 +59,18 @@ void AITechManager::RaiseTech()
 
 }
 
-std::vector<AITechManager::TechOption> AITechManager::GetAvailableTech()
+std::vector<std::size_t> AITechManager::GetAvailableTechIndices()
 {
-	std::vector<TechOption> availableTech;
+	std::vector<std::size_t> availableTechIndices;
 
-	for (const auto& techOption : unusedTech)
+	for (std::size_t i = 0; i < unusedTech.size(); ++i)
 	{
-		if (Player[aiPlayerIndex].HasTechnology(techOption.prerequisite)) {
-			availableTech.push_back(techOption);
+		if (Player[aiPlayerIndex].HasTechnology(unusedTech[i].prerequisite)) {
+			availableTechIndices.push_back(i);
 		}
 	}
 
-	return availableTech;
+	return availableTechIndices;
 }
 
 TurretLevel AITechManager::CurrentTurretLevel() const {

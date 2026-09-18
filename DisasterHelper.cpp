@@ -87,7 +87,7 @@ void DisasterHelper::AddVortexCorridor(const MAP_RECT& mapRect, int corridorWeig
 
 LOCATION DisasterHelper::GetRandMapLoc()
 {
-	if (!MapPropertiesSet())
+	if (!AreMapPropertiesSet())
 	{
 		SendDebugMessage("DisasterHelper map properties are not set.");
 		return LOCATION(0, 0);
@@ -116,7 +116,7 @@ bool DisasterHelper::IsLocInSafeArea(LOCATION& loc)
 
 LOCATION DisasterHelper::GetRandLocOutsideSafeAreas()
 {
-	if (!MapPropertiesSet())
+	if (!AreMapPropertiesSet())
 	{
 		SendDebugMessage("DisasterHelper map properties are not set.");
 		return LOCATION(0, 0);
@@ -180,7 +180,7 @@ void DisasterHelper::CreateRandomDisaster()
 
 void DisasterHelper::CreateEarthquake()
 {
-	if (!MapPropertiesSet())
+	if (!AreMapPropertiesSet())
 	{
 		SendDebugMessage("DisasterHelper map properties are not set.");
 		return;
@@ -226,19 +226,19 @@ void DisasterHelper::CreateVortex()
 		vortexStartLoc.y,
 		minVortexDuration + TethysGame::GetRand(maxVortexDuration - minVortexDuration),
 		vortexEndLoc.x,
-		vortexEndLoc.x,
+		vortexEndLoc.y,
 		false);
 }
 
 void DisasterHelper::CreateStorm()
 {
-	if (!MapPropertiesSet())
+	if (!AreMapPropertiesSet())
 	{
 		SendDebugMessage("DisasterHelper map properties are not set.");
 		return;
 	}
 
-	//NOTE: Electrical storms will conintue beyond their end point if duration permits.
+	//NOTE: Electrical storms will continue beyond their end point if duration permits.
 	LOCATION startLoc = GetRandMapLoc();
 	LOCATION endLoc = GetRandMapLoc();
 
@@ -249,7 +249,7 @@ void DisasterHelper::CreateStorm()
 
 void DisasterHelper::CreateMeteor()
 {
-	if (!MapPropertiesSet())
+	if (!AreMapPropertiesSet())
 	{
 		SendDebugMessage("DisasterHelper map properties are not set.");
 		return;

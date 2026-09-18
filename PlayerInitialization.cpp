@@ -6,12 +6,12 @@
 void InitializePlayer(const PlayerNum playerNumber, const LOCATION& startLoc);
 void CreateInitialVech(Unit& unit, map_id unitType, const LOCATION& loc, PlayerNum playerNumber, map_id cargo);
 
-// TODO: Randomize starting location
-const std::array<LOCATION, 4> playerStartLocs{
+const std::array<LOCATION, 5> playerStartLocs{
 	LOCATION(165 + X_, 1 + Y_),
 	LOCATION(170 + X_, 1 + Y_),
 	LOCATION(175 + X_, 1 + Y_),
-	LOCATION(180 + X_, 1 + Y_)};
+	LOCATION(180 + X_, 1 + Y_),
+	LOCATION(185 + X_, 1 + Y_)};
 
 const ResourceSet resourceSet {
 	{
@@ -30,7 +30,8 @@ void InitializePlayers(int humanPlayerCount, PlayerNum aiPlayerIndex)
 	std::copy(playerStartLocs.begin(), playerStartLocs.end(), initStartLocs.begin());
 
 #if _DEBUG
-	//CreateWinVechs(PlayerNum::Player0, aiPlayerIndex);
+	CreateWinVechs(PlayerNum::Player0, aiPlayerIndex);
+	Player[0].MarkResearchComplete(TechID::techRareOreProcessing);
 #endif
 
 	for (int i = 0; i < humanPlayerCount; ++i)
