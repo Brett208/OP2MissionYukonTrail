@@ -3,20 +3,17 @@
 const std::vector<AITechManager::TechOption> AITechManager::allTech
 {
 	TechOption{techMobileWeaponsPlatform, std::vector<TechID>{techLargeScaleOpticalResonators, techMicrowaveTurret, techDissipatingAdhesives}, false, false},
-	
+
 	TechOption{techLargeScaleOpticalResonators, std::vector<TechID>{techIndependentTurretPowerSystems}, false, false},
 	TechOption{techLargeScaleOpticalResonators, std::vector<TechID>{techScoutClassDriveTrainRefit, techHeatDissipationSystemsPlymouth}, false, false},
 
 	TechOption{techIndependentTurretPowerSystems, std::vector<TechID>{techAdvancedCombatChassis}, false, true},
 
 	TechOption{techAdvancedCombatChassis, std::vector<TechID>{techAdvancedArmoringSystems}, false, false},
-	//TechOption{techAdvancedCombatChassis, std::vector<TechID>{techReinforcedPantherConstruction}},
-	//TechOption{techAdvancedCombatChassis, std::vector<TechID>{techPantherDriveTrainRefit}},
 	TechOption{techAdvancedCombatChassis, std::vector<TechID>{techElectromagneticPulsing, techDirectionalMagneticFields, techRocketPropulsion}, true, false},
-	
+
 	TechOption{techElectromagneticPulsing, std::vector<TechID>{techRocketAtmosphericReEntrySystem}, false, false},
 	TechOption{techElectromagneticPulsing, std::vector<TechID>{techDualTurretWeaponsSystems}, false, true},
-	TechOption{techDualTurretWeaponsSystems, std::vector<TechID>{techTigerSpeedModification}, false, false},
 
 	TechOption{techDirectionalMagneticFields, std::vector<TechID>{techIncreasedCapacitanceCircuitry, techHighPoweredExplosives}, false, false},
 

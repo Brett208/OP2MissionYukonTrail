@@ -7,8 +7,10 @@ A cooperative 5 player Resource Race multiplayer scenario for Outpost 2. Require
 Version 1.1.0
 
 - feat: Support a 5th player
-- fix: prevent ai tech branching from inadvertently closing some tech options
+- feat: prevent AI from researching tiger speed modification (better chance of outrunning AI if game is close)
+- fix: prevent AI tech branching from inadvertently closing some tech options
 - fix: correct vortex endpoints (was setting incorrect y position)
+- fix: prevent 3 bar rare from sometimes being too close to a cliff to build a mine
 
 Version 1.0.3
 

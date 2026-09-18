@@ -49,7 +49,7 @@ int HumanPlayerCount()
 	return TethysGame::NoPlayers() - 1;
 }
 
-//Note: Scenario must have 5 or fewer human players to work.
+//Note: Scenario must have 5 or fewer human players to work
 PlayerColor GetAIColor(bool allowBlack = false)
 {
 	int totalColors = 6;
@@ -122,25 +122,6 @@ std::unique_ptr<FightGroupMaker> fightGroupMaker;
 Trigger attackTrigger;
 Trigger missileTrigger;
 
-const std::array<MAP_RECT, 8> commonMineRects{
-	MAP_RECT(28 + X_, 32 + Y_, 35 + X_ ,56 + Y_),
-	MAP_RECT(37 + X_, 32 + Y_, 49 + X_ ,56 + Y_),
-
-	MAP_RECT(28 + X_, 58 + Y_, 35 + X_ ,86 + Y_),
-	MAP_RECT(37 + X_, 58 + Y_, 49 + X_ ,86 + Y_),
-
-	MAP_RECT(51 + X_, 32 + Y_, 70 + X_ ,56 + Y_),
-	MAP_RECT(72 + X_, 32 + Y_, 90 + X_ ,56 + Y_),
-
-	MAP_RECT(51 + X_, 58 + Y_, 70 + X_ ,86 + Y_),
-	MAP_RECT(72 + X_, 58 + Y_, 90 + X_ ,86 + Y_)
-};
-
-void CreateBeacon(const LOCATION& loc, BeaconTypes beaconType, Yield yield)
-{
-	TethysGame::CreateBeacon(map_id::mapMiningBeacon, loc.x, loc.y, beaconType, yield, Variant::Variant3);
-}
-
 Export int InitProc()
 {
 	CreateMarkers();
@@ -178,49 +159,57 @@ Export int InitProc()
 
 	InitializePlayers(HumanPlayerCount(), GetAIIndex());
 
-	CreateBeacon(MAP_RECT(26 + X_, 41 + Y_, 40 + X_, 49 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar3);
+	CreateCommonOreBeacon(MAP_RECT(26 + X_, 41 + Y_, 40 + X_, 49 + Y_).RandPt(), Yield::Bar3);
 
-	CreateBeacon(MAP_RECT(124 + X_, 72 + Y_, 133 + X_, 82 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar2);
-	CreateBeacon(MAP_RECT(47 + X_, 154 + Y_, 75 + X_, 165 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar2);
-	CreateBeacon(MAP_RECT(56 + X_, 183 + Y_, 70 + X_, 198 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar2);
-	CreateBeacon(MAP_RECT(191 + X_, 175 + Y_, 224 + X_, 199 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar2);
-	CreateBeacon(MAP_RECT(209 + X_, 221 + Y_, 224 + X_, 234 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar2);
-	CreateBeacon(MAP_RECT(127 + X_, 90 + Y_, 135 + X_, 99 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar2);
-	CreateBeacon(MAP_RECT(104 + X_, 194 + Y_, 120 + X_, 203 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar2);
+	CreateCommonOreBeacon(MAP_RECT(124 + X_, 72 + Y_, 133 + X_, 82 + Y_).RandPt(), Yield::Bar2);
+	CreateCommonOreBeacon(MAP_RECT(47 + X_, 154 + Y_, 75 + X_, 165 + Y_).RandPt(), Yield::Bar2);
+	CreateCommonOreBeacon(MAP_RECT(56 + X_, 183 + Y_, 70 + X_, 198 + Y_).RandPt(), Yield::Bar2);
+	CreateCommonOreBeacon(MAP_RECT(191 + X_, 175 + Y_, 224 + X_, 199 + Y_).RandPt(), Yield::Bar2);
+	CreateCommonOreBeacon(MAP_RECT(209 + X_, 221 + Y_, 224 + X_, 234 + Y_).RandPt(), Yield::Bar2);
+	CreateCommonOreBeacon(MAP_RECT(127 + X_, 90 + Y_, 135 + X_, 99 + Y_).RandPt(), Yield::Bar2);
+	CreateCommonOreBeacon(MAP_RECT(104 + X_, 194 + Y_, 120 + X_, 203 + Y_).RandPt(), Yield::Bar2);
 
-	CreateBeacon(MAP_RECT(241 + X_, 236 + Y_, 251 + X_, 243 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
-	CreateBeacon(MAP_RECT(212 + X_, 52 + Y_, 231 + X_, 65 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
-	CreateBeacon(MAP_RECT(238 + X_, 70 + Y_, 252 + X_, 80 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar2);
-	CreateBeacon(MAP_RECT(194 + X_, 75 + Y_, 205 + X_, 82 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
-	CreateBeacon(MAP_RECT(145 + X_, 149 + Y_, 176 + X_, 175 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
-	CreateBeacon(MAP_RECT(100 + X_, 157 + Y_, 118 + X_, 167 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
-	CreateBeacon(MAP_RECT(133 + X_, 22 + Y_, 148 + X_, 37 + Y_).RandPt(), BeaconTypes::OreTypeCommon, Yield::Bar1);
+	CreateCommonOreBeacon(MAP_RECT(241 + X_, 236 + Y_, 251 + X_, 243 + Y_).RandPt(), Yield::Bar1);
+	CreateCommonOreBeacon(MAP_RECT(212 + X_, 52 + Y_, 231 + X_, 65 + Y_).RandPt(), Yield::Bar1);
+	CreateCommonOreBeacon(MAP_RECT(238 + X_, 70 + Y_, 252 + X_, 80 + Y_).RandPt(), Yield::Bar2);
+	CreateCommonOreBeacon(MAP_RECT(194 + X_, 75 + Y_, 205 + X_, 82 + Y_).RandPt(), Yield::Bar1);
+	CreateCommonOreBeacon(MAP_RECT(145 + X_, 149 + Y_, 176 + X_, 175 + Y_).RandPt(), Yield::Bar1);
+	CreateCommonOreBeacon(MAP_RECT(100 + X_, 157 + Y_, 118 + X_, 167 + Y_).RandPt(), Yield::Bar1);
+	CreateCommonOreBeacon(MAP_RECT(133 + X_, 22 + Y_, 148 + X_, 37 + Y_).RandPt(), Yield::Bar1);
 
-	CreateBeacon(MAP_RECT(215 + X_, 248 + Y_, 227 + X_, 254 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
-	CreateBeacon(MAP_RECT(212 + X_, 52 + Y_, 231 + X_, 65 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
-	CreateBeacon(MAP_RECT(33 + X_, 84 + Y_, 51 + X_, 90 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
-	CreateBeacon(MAP_RECT(75 + X_, 182 + Y_, 82 + X_, 184 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar3);
+	CreateRareOreBeacon(MAP_RECT(216 + X_, 249 + Y_, 227 + X_, 254 + Y_).RandPt(), Yield::Bar3);
+	CreateRareOreBeacon(MAP_RECT(212 + X_, 52 + Y_, 231 + X_, 65 + Y_).RandPt(), Yield::Bar2);
+	CreateRareOreBeacon(MAP_RECT(33 + X_, 84 + Y_, 51 + X_, 90 + Y_).RandPt(), Yield::Bar3);
+	CreateRareOreBeacon(MAP_RECT(75 + X_, 182 + Y_, 82 + X_, 184 + Y_).RandPt(), Yield::Bar3);
 
-	CreateBeacon(MAP_RECT(199 + X_, 247 + Y_, 209 + X_, 251 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
-	CreateBeacon(MAP_RECT(101 + X_, 84 + Y_, 110 + X_, 90 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
-	CreateBeacon(MAP_RECT(129 + X_, 204 + Y_, 148 + X_, 212 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
-	CreateBeacon(MAP_RECT(241 + X_, 3 + Y_, 252 + X_, 9 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar2);
+	CreateRareOreBeacon(MAP_RECT(199 + X_, 247 + Y_, 209 + X_, 251 + Y_).RandPt(), Yield::Bar2);
+	CreateRareOreBeacon(MAP_RECT(101 + X_, 84 + Y_, 110 + X_, 90 + Y_).RandPt(), Yield::Bar2);
+	CreateRareOreBeacon(MAP_RECT(129 + X_, 204 + Y_, 148 + X_, 212 + Y_).RandPt(), Yield::Bar2);
+	CreateRareOreBeacon(MAP_RECT(241 + X_, 3 + Y_, 252 + X_, 9 + Y_).RandPt(), Yield::Bar2);
 
-	CreateBeacon(MAP_RECT(78 + X_, 184 + Y_, 252 + X_, 100 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar1);
-	CreateBeacon(MAP_RECT(199 + X_, 96 + Y_, 217 + X_, 106 + Y_).RandPt(), BeaconTypes::OreTypeRare, Yield::Bar1);
-	
-	TethysGame::CreateBeacon(map_id::mapFumarole, 229 + X_, 162 + Y_, -1, -1, -1);
-	TethysGame::CreateBeacon(map_id::mapFumarole, 239 + X_, 162 + Y_, -1, -1, -1);
-	TethysGame::CreateBeacon(map_id::mapFumarole, 231 + X_, 22 + Y_, -1, -1, -1);
-	TethysGame::CreateBeacon(map_id::mapFumarole, 245 + X_, 6 + Y_, -1, -1, -1);
-	TethysGame::CreateBeacon(map_id::mapFumarole, 73 + X_, 18 + Y_, -1, -1, -1);
-	TethysGame::CreateBeacon(map_id::mapFumarole, 52 + X_, 239 + Y_, -1, -1, -1);
-	TethysGame::CreateBeacon(map_id::mapFumarole, 83 + X_, 193 + Y_, -1, -1, -1);
+	CreateRareOreBeacon(MAP_RECT(137 + X_, 84 + Y_, 197 + X_, 100 + Y_).RandPt(), Yield::Bar1);
+	CreateRareOreBeacon(MAP_RECT(199 + X_, 96 + Y_, 217 + X_, 106 + Y_).RandPt(), Yield::Bar1);
 
-	TethysGame::CreateBeacon(map_id::mapMagmaVent, 167 + X_, 140 + Y_, -1, -1, -1);
-	TethysGame::CreateBeacon(map_id::mapMagmaVent, 7 + X_, 10 + Y_, -1, -1, -1);
-	TethysGame::CreateBeacon(map_id::mapMagmaVent, 98 + X_, 153 + Y_, -1, -1, -1);
-	
+	if (HumanPlayerCount() > 4)
+	{
+		CreateCommonOreBeacon(MAP_RECT(122 + X_, 132 + Y_, 150 + X_, 146 + Y_).RandPt(), Yield::Bar2);
+		CreateCommonOreBeacon(MAP_RECT(107 + X_, 110 + Y_, 142 + X_, 126 + Y_).RandPt(), Yield::Bar2);
+
+		CreateRareOreBeacon(MAP_RECT(152 + X_, 120 + Y_, 191 + X_, 134 + Y_).RandPt(), Yield::Bar2);
+		CreateRareOreBeacon(MAP_RECT(65 + X_, 114 + Y_, 83 + X_, 128 + Y_).RandPt(), Yield::Bar2);
+	}
+
+	CreateFumarole(LOCATION(229 + X_, 162 + Y_));
+	CreateFumarole(LOCATION(239 + X_, 162 + Y_));
+	CreateFumarole(LOCATION(231 + X_, 22 + Y_));
+	CreateFumarole(LOCATION(245 + X_, 6 + Y_));
+	CreateFumarole(LOCATION(73 + X_, 18 + Y_));
+	CreateFumarole(LOCATION(52 + X_, 239 + Y_));
+	CreateFumarole(LOCATION(83 + X_, 193 + Y_));
+
+	CreateMagmaVent(LOCATION(167 + X_, 140 + Y_));
+	CreateMagmaVent(LOCATION(7 + X_, 10 + Y_));
+	CreateMagmaVent(LOCATION(98 + X_, 153 + Y_));
 
 	CreateVictoryConditions();
 
@@ -229,21 +218,26 @@ Export int InitProc()
 	return true;
 }
 
+void PlaceCircleMarker(int x, int y)
+{
+	Unit marker;
+	TethysGame::PlaceMarker(marker, x, y, MarkerTypes::Circle);
+}
+
 void CreateMarkers()
 {
 	int midX, midY;
 	midX = (holdingRect.x2 - holdingRect.x1) / 2;
 	midY = (holdingRect.y2 - holdingRect.y1) / 2;
-	Unit marker;
 
-	TethysGame::PlaceMarker(marker, holdingRect.x1, holdingRect.y1, MarkerTypes::Circle);
-	TethysGame::PlaceMarker(marker, holdingRect.x2, holdingRect.y1, MarkerTypes::Circle);
-	TethysGame::PlaceMarker(marker, holdingRect.x1, holdingRect.y2, MarkerTypes::Circle);
-	TethysGame::PlaceMarker(marker, holdingRect.x2, holdingRect.y2, MarkerTypes::Circle);
-	TethysGame::PlaceMarker(marker, holdingRect.x1 + midX, holdingRect.y1, MarkerTypes::Circle);
-	TethysGame::PlaceMarker(marker, holdingRect.x1 + midX, holdingRect.y2, MarkerTypes::Circle);
-	TethysGame::PlaceMarker(marker, holdingRect.x1, holdingRect.y1 + midY, MarkerTypes::Circle);
-	TethysGame::PlaceMarker(marker, holdingRect.x2, holdingRect.y1 + midY, MarkerTypes::Circle);
+	PlaceCircleMarker(holdingRect.x1, holdingRect.y1);
+	PlaceCircleMarker(holdingRect.x2, holdingRect.y1);
+	PlaceCircleMarker(holdingRect.x1, holdingRect.y2);
+	PlaceCircleMarker(holdingRect.x2, holdingRect.y2);
+	PlaceCircleMarker(holdingRect.x1 + midX, holdingRect.y1);
+	PlaceCircleMarker(holdingRect.x1 + midX, holdingRect.y2);
+	PlaceCircleMarker(holdingRect.x1, holdingRect.y1 + midY);
+	PlaceCircleMarker(holdingRect.x2, holdingRect.y1 + midY);
 }
 
 void FreeMorale(int playerIndex) 
@@ -357,7 +351,6 @@ Export void CreateDisaster()
 Export void CreateScoutPatrol()
 {
 	fightGroupMaker->CreatePatrolGroups();
-	//attackTrigger = CreateTimeTrigger(true, false, 70, 110, "CreateAttack");
 	attackTrigger = CreateTimeTrigger(true, false, 7500, 10000, "CreateAttack");
 
 	const int playerCount = HumanPlayerCount();
