@@ -4,6 +4,10 @@ A cooperative 5 player Resource Race multiplayer scenario for Outpost 2. Require
 
 ### Change Log
 
+Version 1.1.1
+
+- fix: correct 2 map cells that were listed as impassable but should be passable
+
 Version 1.1.0
 
 - feat: Support a 5th player
